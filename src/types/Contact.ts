@@ -1,5 +1,5 @@
 export interface IContact {
-  createdAt: Date;
+  createdAt: string;
   name: string;
   avatar: string;
   id: number;
