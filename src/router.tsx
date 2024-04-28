@@ -1,9 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { PageHome } from "./pages/Home";
 import { PageTasks } from "./pages/Tasks";
 import { PageContacts } from "./pages/Contacts";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: '/',
         element: <PageHome />
