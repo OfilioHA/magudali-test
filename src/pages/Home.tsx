@@ -1,11 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import { HomeSection } from '../components/home/HomeSection';
 
 export function PageHome() {
     return (
         <div id="page-home">
-            <h1>Home Page</h1>
-            <Link to={'/tasks'}>Tasks</Link>
-            <Link to={'/contacts'}>List</Link>
+            <Container>
+                <Row className='min-vh-100 align-items-center justify-content-center'>
+                    <Col sm={10} md={4}>
+                        <HomeSection />
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 }
