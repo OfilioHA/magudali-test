@@ -1,7 +1,7 @@
 import { ListGroupItem, Image } from 'react-bootstrap';
 import { IContact } from '../../types/Contact';
 
-export type propTypes = Readonly<IContact>
+type propTypes = Readonly<IContact>
 
 export function ContactItem(props: propTypes) {
     return (
