@@ -5,17 +5,30 @@ import { MemoryRouter } from 'react-router-dom';
 import { configureStore, Store } from '@reduxjs/toolkit';
 import tasksReducer, { addTask, removeTask } from '../stores/tasksSlice';
 import { ITask } from '../types/Task';
+import { Provider } from 'react-redux';
 
 describe('Page - Contacts', () => {
+
+    let store: Store<{ tasks: { tasks: ITask[] } }>;
+    beforeEach(() => {
+        store = configureStore({
+            reducer: {
+                tasks: tasksReducer,
+            },
+        });
+    });
+
     test('renders component', () => {
-        render(<MemoryRouter><PageTasks /></MemoryRouter>);
+        render(<Provider store={store}>
+            <MemoryRouter><PageTasks /></MemoryRouter>
+        </Provider>);
         const component = document.getElementById('page-tasks');
         expect(component).toBeInTheDocument();
     });
 });
 
 describe('tasks reducer', () => {
-    
+
     let store: Store<{ tasks: { tasks: ITask[] } }>;
     beforeEach(() => {
         store = configureStore({
